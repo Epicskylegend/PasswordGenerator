@@ -29,6 +29,7 @@ public class Main {
     }
     String newPassword = String.join("", newList);
     System.out.println(newPassword);
+    //som
 
 
 }
