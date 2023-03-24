@@ -20,14 +20,18 @@ public class Main {
             //System.out.println(word);
         //}
 
-            //System.out.println(validCharacters.length);
-
     System.out.println("Welcome to the password generator. What length would you like your password to be?");
     System.out.println("Type 's' to stop");
 
-    while(!password.equals("s") || !password.equals("S")) {
+
+    while(!password.equals(validCharacters)) {
+
         ArrayList<String> spacing = new ArrayList<String>();
-    int passwordLength = password.nextInt();
+        int passwordLength = password.nextInt();
+        if(passwordLength < 1 ) {
+            System.out.println("Please enter a number greater than 0.");
+        }
+
     ArrayList<String> newList = new ArrayList<String>();
     String randomCharacter;
 
@@ -44,7 +48,7 @@ public class Main {
     String newPassword = String.join("", newList);
     String newSpacing = String.join("", spacing);
 
-    if(newPassword.length() < 8) {
+    if(newPassword.length() < 8 && newPassword.length() != 0) {
             System.out.println("Password Strength: Very Weak");
         }
 
