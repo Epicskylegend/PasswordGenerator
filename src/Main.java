@@ -50,27 +50,35 @@ public class Main {
 
         int randomLowerIndex = random.nextInt(26);
         randomLowercase = validLowerCase[randomLowerIndex];
-        newList.add(randomLowercase);
-        i++;
-        spacing.add("-");
+        if(i < passwordLength) {
+            newList.add(randomLowercase);
+            i++;
+            spacing.add("-");
+        }
 
         int randomNumberIndex = random.nextInt(10);
         randomNumber = validNumbers[randomNumberIndex];
-        newList.add(randomNumber);
-        i++;
-        spacing.add("-");
+        if(i < passwordLength) {
+            newList.add(randomNumber);
+            i++;
+            spacing.add("-");
+        }
 
         int randomUpperIndex = random.nextInt(26);
         randomUppercase = validUpperCase[randomUpperIndex];
-        newList.add(randomUppercase);
-        i++;
-        spacing.add("-");
+        if(i < passwordLength) {
+            newList.add(randomUppercase);
+            i++;
+            spacing.add("-");
+        }
 
         int randomSymbolIndex = random.nextInt(13);
         randomSymbol = validSymbols[randomSymbolIndex];
-        newList.add(randomSymbol);
-        i++;
-        spacing.add("-");
+        if(i < passwordLength) {
+            newList.add(randomSymbol);
+            i++;
+            spacing.add("-");
+        }
 
 
 
