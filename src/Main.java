@@ -13,7 +13,7 @@ public class Main {
         File file = new File("C:\\Users\\adeba\\OneDrive\\Minnehack 2023\\PasswordGenerator\\words.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         String word = br.readLine();
-        System.out.println(word);
+        //System.out.println(word);
 
         //String word;
        // while((word = br.readLine()) != null) {
@@ -21,7 +21,7 @@ public class Main {
         //}
 
     System.out.println("Welcome to the password generator. What length would you like your password to be?");
-    System.out.println("Type in any non integer to stop program.");
+    System.out.println("Type in any non-integer to stop program.");
 
 
     while(!password.equals(validCharacters)) {
@@ -48,23 +48,61 @@ public class Main {
     String newPassword = String.join("", newList);
     String newSpacing = String.join("", spacing);
 
+
+
     if(newPassword.length() < 8 && newPassword.length() != 0) {
             System.out.println("Password Strength: Very Weak.");
         }
+    if(newPassword.length() == 7) {
+        System.out.println("Estimated time to breach password: 6 minutes.");
+        }
+
+    if(newPassword.length() == 6) {
+            System.out.println("Estimated time to breach password: 5 seconds.");
+        }
+
+    if(newPassword.length() < 6) {
+            System.out.println("Estimated time to breach password: None.");
+        }
+
 
     if(newPassword.length() == 8) {
         System.out.println("Password Strength: Weak.");
+        System.out.println("Estimated time to breach password: 8 hours.");
     }
-    if(newPassword.length() > 8 && newPassword.length() <= 12) {
+
+        if(newPassword.length() == 9) {
+            System.out.println("Estimated time to breach password: 3 weeks.");
+        }
+
+        if(newPassword.length() == 10) {
+            System.out.println("Estimated time to breach password: 5 years.");
+        }
+
+
+
+        if(newPassword.length() > 8 && newPassword.length() <= 12) {
             System.out.println("Password Strength: Moderate.");
         }
 
-    if(newPassword.length() > 12 && newPassword.length() < 16) {
+        if(newPassword.length() == 11) {
+            System.out.println("Estimated time to crack password: 400 years.");
+        }
+
+
+
+        if(newPassword.length() > 12 && newPassword.length() < 16) {
             System.out.println("Password Strength: Strong.");
         }
 
+
+
     if(newPassword.length() >= 16) {
             System.out.println("Password Strength: Very Strong.");
+        }
+
+    if(newPassword.length() >= 12) {
+            System.out.println("Estimated time to breach password: Millenniums.");
         }
 
 
