@@ -9,10 +9,10 @@ public class Main {
                 "2","3","4","5","6","7","8","9","!","@", "#","$","%","^","&","*","-","_","+",".",
                 "~","=",};
 
-        String [] validLowerCase = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};// 26
-        String [] validUpperCase = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"}; // 26
-        String [] validNumbers = {"0","1","2","3","4","5","6","7","8","9"}; // 10
-        String [] validSymbols = {"~","!","@","#","$","%","^","&","*","-","_","=","+"}; // 13
+        String [] validLowerCase = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};// 26 characters
+        String [] validUpperCase = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"}; // 26 characters
+        String [] validNumbers = {"0","1","2","3","4","5","6","7","8","9"}; // 10 characters
+        String [] validSymbols = {"~","!","@","#","$","%","^","&","*","-","_","=","+"}; // 13 characters
 
         Scanner password = new Scanner(System.in);
         Random random = new Random();
@@ -48,44 +48,48 @@ public class Main {
     for (int i = 0; i < passwordLength;) {
         // 76 total characters
 
-        int randomLowerIndex = random.nextInt(26);
-        randomLowercase = validLowerCase[randomLowerIndex];
-        if(i < passwordLength) {
-            newList.add(randomLowercase);
-            i++;
-            spacing.add("-");
+
+
+            int randomLowerIndex = random.nextInt(validLowerCase.length);
+            randomLowercase = validLowerCase[randomLowerIndex];
+            if(i < passwordLength) {
+                newList.add(randomLowercase);
+                i++;
+                spacing.add("-");
+            }
+
+
+            int randomNumberIndex = random.nextInt(validNumbers.length);
+            randomNumber = validNumbers[randomNumberIndex];
+            if (i < passwordLength) {
+                newList.add(randomNumber);
+                i++;
+                spacing.add("-");
+            }
+
+
+
+            int randomUpperIndex = random.nextInt(validUpperCase.length);
+            randomUppercase = validUpperCase[randomUpperIndex];
+            if (i < passwordLength) {
+                newList.add(randomUppercase);
+                i++;
+                spacing.add("-");
+            }
+
+
+            int randomSymbolIndex = random.nextInt(validSymbols.length);
+            randomSymbol = validSymbols[randomSymbolIndex];
+            if (i < passwordLength) {
+                newList.add(randomSymbol);
+                i++;
+                spacing.add("-");
+            }
         }
 
-        int randomNumberIndex = random.nextInt(10);
-        randomNumber = validNumbers[randomNumberIndex];
-        if(i < passwordLength) {
-            newList.add(randomNumber);
-            i++;
-            spacing.add("-");
-        }
-
-        int randomUpperIndex = random.nextInt(26);
-        randomUppercase = validUpperCase[randomUpperIndex];
-        if(i < passwordLength) {
-            newList.add(randomUppercase);
-            i++;
-            spacing.add("-");
-        }
-
-        int randomSymbolIndex = random.nextInt(13);
-        randomSymbol = validSymbols[randomSymbolIndex];
-        if(i < passwordLength) {
-            newList.add(randomSymbol);
-            i++;
-            spacing.add("-");
-        }
 
 
-
-
-    }
-
-
+    Collections.shuffle(newList);
     String newPassword = String.join("", newList);
     String newSpacing = String.join("", spacing);
 
@@ -151,7 +155,6 @@ public class Main {
     System.out.println(newPassword);
     System.out.println(newSpacing);
    // System.out.println(newPassword.hashCode());
-
 
 }
 
