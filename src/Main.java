@@ -8,6 +8,12 @@ public class Main {
                 "r","R","s","S","t","T","u","U","v","V","w","W","x","X","y","Y","z","Z","0","1",
                 "2","3","4","5","6","7","8","9","!","@", "#","$","%","^","&","*","-","_","+",".",
                 "~","=",};
+
+        String [] validLowerCase = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};// 26
+        String [] validUpperCase = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"}; // 26
+        String [] validNumbers = {"0","1","2","3","4","5","6","7","8","9"}; // 10
+        String [] validSymbols = {"~","!","@","#","$","%","^","&","*","-","_","=","+"}; // 13
+
         Scanner password = new Scanner(System.in);
         Random random = new Random();
         File file = new File("C:\\Users\\adeba\\OneDrive\\Minnehack 2023\\PasswordGenerator\\words.txt");
@@ -33,15 +39,42 @@ public class Main {
         }
 
     ArrayList<String> newList = new ArrayList<String>();
-    String randomCharacter;
+    String randomLowercase;
+    String randomNumber;
+    String randomUppercase;
+    String randomSymbol;
 
 
-    for (int i = 0; i < passwordLength; i++) {
+    for (int i = 0; i < passwordLength;) {
+        // 76 total characters
 
-        int randomIndex = random.nextInt(76);
-        randomCharacter = validCharacters[randomIndex];
-        newList.add(randomCharacter);
+        int randomLowerIndex = random.nextInt(26);
+        randomLowercase = validLowerCase[randomLowerIndex];
+        newList.add(randomLowercase);
+        i++;
         spacing.add("-");
+
+        int randomNumberIndex = random.nextInt(10);
+        randomNumber = validNumbers[randomNumberIndex];
+        newList.add(randomNumber);
+        i++;
+        spacing.add("-");
+
+        int randomUpperIndex = random.nextInt(26);
+        randomUppercase = validUpperCase[randomUpperIndex];
+        newList.add(randomUppercase);
+        i++;
+        spacing.add("-");
+
+        int randomSymbolIndex = random.nextInt(13);
+        randomSymbol = validSymbols[randomSymbolIndex];
+        newList.add(randomSymbol);
+        i++;
+        spacing.add("-");
+
+
+
+
     }
 
 
@@ -61,7 +94,7 @@ public class Main {
             System.out.println("Estimated time to breach password: 5 seconds.");
         }
 
-    if(newPassword.length() < 6) {
+    if(newPassword.length() < 6 && newPassword.length() > 0) {
             System.out.println("Estimated time to breach password: None.");
         }
 
