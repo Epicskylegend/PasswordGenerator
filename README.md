@@ -2,4 +2,4 @@
 
 ### Program in Java that will generate random passwords based on the length the user asks for.
 
-![PasswordGenerator](https://user-images.githubusercontent.com/85533331/227057694-ef9f61cc-5987-48af-a924-e80557a5081f.jpg)
+![PasswordGenerator](https://user-images.githubusercontent.com/85533331/227432281-7666d3ec-c472-4d26-82e4-e11524139ae7.jpg)
