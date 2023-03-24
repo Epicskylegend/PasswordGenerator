@@ -14,6 +14,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new FileReader(file));
         String word = br.readLine();
         System.out.println(word);
+
         //String word;
        // while((word = br.readLine()) != null) {
             //System.out.println(word);
@@ -21,26 +22,51 @@ public class Main {
 
             //System.out.println(validCharacters.length);
 
-
-
     System.out.println("Welcome to the password generator. What length would you like your password to be?");
     System.out.println("Type 's' to stop");
 
     while(!password.equals("s") || !password.equals("S")) {
+        ArrayList<String> spacing = new ArrayList<String>();
     int passwordLength = password.nextInt();
     ArrayList<String> newList = new ArrayList<String>();
     String randomCharacter;
 
 
     for (int i = 0; i < passwordLength; i++) {
+
         int randomIndex = random.nextInt(76);
         randomCharacter = validCharacters[randomIndex];
         newList.add(randomCharacter);
+        spacing.add("-");
     }
 
-    String newPassword = String.join("", newList);
 
+    String newPassword = String.join("", newList);
+    String newSpacing = String.join("", spacing);
+
+    if(newPassword.length() < 8) {
+            System.out.println("Password Strength: Very Weak");
+        }
+
+    if(newPassword.length() == 8) {
+        System.out.println("Password Strength: Weak");
+    }
+    if(newPassword.length() > 8 && newPassword.length() <= 12) {
+            System.out.println("Password Strength: Moderate");
+        }
+
+    if(newPassword.length() > 12 && newPassword.length() < 16) {
+            System.out.println("Password Strength: Strong");
+        }
+
+    if(newPassword.length() >= 16) {
+            System.out.println("Password Strength: Very Strong");
+        }
+
+
+        System.out.println(newSpacing);
     System.out.println(newPassword);
+        System.out.println(newSpacing);
    // System.out.println(newPassword.hashCode());
 
 
