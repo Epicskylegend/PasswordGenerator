@@ -21,7 +21,7 @@ public class Main {
         //}
 
     System.out.println("Welcome to the password generator. What length would you like your password to be?");
-    System.out.println("Type 's' to stop");
+    System.out.println("Type in any non integer to stop program.");
 
 
     while(!password.equals(validCharacters)) {
@@ -49,28 +49,28 @@ public class Main {
     String newSpacing = String.join("", spacing);
 
     if(newPassword.length() < 8 && newPassword.length() != 0) {
-            System.out.println("Password Strength: Very Weak");
+            System.out.println("Password Strength: Very Weak.");
         }
 
     if(newPassword.length() == 8) {
-        System.out.println("Password Strength: Weak");
+        System.out.println("Password Strength: Weak.");
     }
     if(newPassword.length() > 8 && newPassword.length() <= 12) {
-            System.out.println("Password Strength: Moderate");
+            System.out.println("Password Strength: Moderate.");
         }
 
     if(newPassword.length() > 12 && newPassword.length() < 16) {
-            System.out.println("Password Strength: Strong");
+            System.out.println("Password Strength: Strong.");
         }
 
     if(newPassword.length() >= 16) {
-            System.out.println("Password Strength: Very Strong");
+            System.out.println("Password Strength: Very Strong.");
         }
 
 
-        System.out.println(newSpacing);
+    System.out.println(newSpacing);
     System.out.println(newPassword);
-        System.out.println(newSpacing);
+    System.out.println(newSpacing);
    // System.out.println(newPassword.hashCode());
 
 
