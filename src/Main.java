@@ -107,11 +107,11 @@ public class Main {
             System.out.println("Password Strength: Very Weak.");
         }
     if(newPassword.length() == 7) {
-        System.out.println("Estimated time to breach password: 6 minutes.");
+        System.out.println("Estimated time to breach password: Less than 20 minutes.");
         }
 
     if(newPassword.length() == 6) {
-            System.out.println("Estimated time to breach password: 5 seconds.");
+            System.out.println("Estimated time to breach password: A few minutes.");
         }
 
     if(newPassword.length() < 6 && newPassword.length() > 0) {
@@ -121,15 +121,15 @@ public class Main {
 
     if(newPassword.length() == 8) {
         System.out.println("Password Strength: Weak.");
-        System.out.println("Estimated time to breach password: 8 hours.");
+        System.out.println("Estimated time to breach password: A few hours.");
     }
 
         if(newPassword.length() == 9) {
-            System.out.println("Estimated time to breach password: 3 weeks.");
+            System.out.println("Estimated time to breach password: 1 day.");
         }
 
         if(newPassword.length() == 10) {
-            System.out.println("Estimated time to breach password: 5 years.");
+            System.out.println("Estimated time to breach password: Less than 2 weeks.");
         }
 
 
@@ -139,7 +139,7 @@ public class Main {
         }
 
         if(newPassword.length() == 11) {
-            System.out.println("Estimated time to crack password: 400 years.");
+            System.out.println("Estimated time to crack password: 4 months.");
         }
 
 
@@ -154,12 +154,24 @@ public class Main {
             System.out.println("Password Strength: Very Strong.");
         }
 
-    if(newPassword.length() >= 12) {
+    if(newPassword.length() == 12) {
+            System.out.println("Estimated time to breach password: 3 years.");
+        }
+
+    if(newPassword.length() == 13) {
+            System.out.println("Estimated time to breach password: 31 years.");
+        }
+    if(newPassword.length() == 14) {
+            System.out.println("Estimated time to breach password: Centuries.");
+        }
+    if(newPassword.length() >= 15) {
             System.out.println("Estimated time to breach password: Millenniums.");
         }
 
 
-    System.out.println(newSpacing);
+
+
+        System.out.println(newSpacing);
     System.out.println(newPassword);
     System.out.println(newSpacing);
    // System.out.println(newPassword.hashCode());
