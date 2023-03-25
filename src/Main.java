@@ -26,7 +26,7 @@ public class Main {
             //System.out.println(word);
         //}
 
-    System.out.println("Welcome to the password generator. What length would you like your password to be?");
+    System.out.println("\nWelcome to the password generator. What length would you like your password to be?\n");
     System.out.println("Type in any non-integer to stop program.");
 
 
