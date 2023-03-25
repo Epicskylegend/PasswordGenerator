@@ -43,16 +43,15 @@ public class Main {
     String randomNumber;
     String randomUppercase;
     String randomSymbol;
+    String randomCharacter;
 
 
     for (int i = 0; i < passwordLength;) {
         // 76 total characters
 
-
-
             int randomLowerIndex = random.nextInt(validLowerCase.length);
             randomLowercase = validLowerCase[randomLowerIndex];
-            if(i < passwordLength) {
+            if(i < passwordLength && i < 4) {
                 newList.add(randomLowercase);
                 i++;
                 spacing.add("-");
@@ -61,7 +60,7 @@ public class Main {
 
             int randomNumberIndex = random.nextInt(validNumbers.length);
             randomNumber = validNumbers[randomNumberIndex];
-            if (i < passwordLength) {
+            if (i < passwordLength && i < 4) {
                 newList.add(randomNumber);
                 i++;
                 spacing.add("-");
@@ -71,7 +70,7 @@ public class Main {
 
             int randomUpperIndex = random.nextInt(validUpperCase.length);
             randomUppercase = validUpperCase[randomUpperIndex];
-            if (i < passwordLength) {
+            if (i < passwordLength && i < 4) {
                 newList.add(randomUppercase);
                 i++;
                 spacing.add("-");
@@ -80,10 +79,19 @@ public class Main {
 
             int randomSymbolIndex = random.nextInt(validSymbols.length);
             randomSymbol = validSymbols[randomSymbolIndex];
-            if (i < passwordLength) {
+            if (i < passwordLength && i < 4) {
                 newList.add(randomSymbol);
                 i++;
                 spacing.add("-");
+            }
+
+            int randomValidCharacter = random.nextInt(validCharacters.length);
+            randomCharacter = validCharacters[randomValidCharacter];
+            if(i < passwordLength && i >= 4) {
+                newList.add(randomCharacter);
+                i++;
+                spacing.add("-");
+
             }
         }
 
