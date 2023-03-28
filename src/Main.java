@@ -131,7 +131,7 @@ public class Main {
     if(newPassword.length() == 8) {
         System.out.println("Password Strength: Weak.");
         System.out.println("Estimated time to breach password: A few hours.");
-    }
+        }
 
     if(newPassword.length() == 9) {
             System.out.println("Estimated time to breach password: 1 day.");
