@@ -34,7 +34,7 @@ public class Main {
 
         ArrayList<String> spacing = new ArrayList<String>();
         int passwordLength = password.nextInt();
-        if(passwordLength < 1 ) {
+        if (passwordLength < 1 ) {
             System.out.println("Please enter a number greater than 0.");
         }
 
@@ -98,8 +98,17 @@ public class Main {
 
 
     Collections.shuffle(newList);
+
+     /*for(int i = 0; i <= newList.size() ; i++) {
+        if(newList.get(i) == newList.get(i+1)+1) {
+            System.out.println("Consecutive characters spotted!");
+            Collections.shuffle(newList);
+        }
+    } */
+
     String newPassword = String.join("", newList);
     String newSpacing = String.join("", spacing);
+
 
 
 
@@ -124,27 +133,27 @@ public class Main {
         System.out.println("Estimated time to breach password: A few hours.");
     }
 
-        if(newPassword.length() == 9) {
+    if(newPassword.length() == 9) {
             System.out.println("Estimated time to breach password: 1 day.");
         }
 
-        if(newPassword.length() == 10) {
+    if(newPassword.length() == 10) {
             System.out.println("Estimated time to breach password: Less than 2 weeks.");
         }
 
 
 
-        if(newPassword.length() > 8 && newPassword.length() <= 12) {
+    if(newPassword.length() > 8 && newPassword.length() <= 12) {
             System.out.println("Password Strength: Moderate.");
         }
 
-        if(newPassword.length() == 11) {
+    if(newPassword.length() == 11) {
             System.out.println("Estimated time to crack password: 4 months.");
         }
 
 
 
-        if(newPassword.length() > 12 && newPassword.length() < 16) {
+    if(newPassword.length() > 12 && newPassword.length() < 16) {
             System.out.println("Password Strength: Strong.");
         }
 
@@ -171,7 +180,7 @@ public class Main {
 
 
 
-        System.out.println(newSpacing);
+    System.out.println(newSpacing);
     System.out.println(newPassword);
     System.out.println(newSpacing);
    // System.out.println(newPassword.hashCode());
